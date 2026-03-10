@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Western Sydney University Student registration form"
+    />
+    <title>My Basic Website</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f4f4f4;
+        line-height: 1.6;
+      }
+
+      header {
+        background: #333;
+        color: #fff;
+        padding: 15px 0;
+        text-align: center;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      nav ul li {
+        display: inline;
+        margin: 0 15px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      nav ul li a:hover {
+        text-decoration: underline;
+      }
+
+      main {
+        padding: 20px;
+        max-width: 600px;
+        margin: auto;
+        background: white;
+      }
+
+      form {
+        margin-top: 20px;
+      }
+
+      fieldset {
+        border: 1px solid #ddd;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      legend {
+        font-weight: bold;
+        padding: 0 10px;
+      }
+
+      label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="date"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: 2px solid #0066cc;
+        outline-offset: 2px;
+      }
+
+      .required::after {
+        content: " *";
+        color: #d00;
+      }
+
+      .form-help {
+        font-size: 0.9em;
+        color: #666;
+        margin-top: 3px;
+      }
+
+      button {
+        background: #0066cc;
+        color: white;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 4px;
+        font-size: 1em;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+
+      button:hover {
+        background: #0052a3;
+      }
+
+      button:focus {
+        outline: 2px solid #0066cc;
+        outline-offset: 2px;
+      }
+
+      footer {
+        background: #222;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        margin-top: 20px;
+      }
+      .error {
+        color: red;
+        font-size: 12px;
+        display: none;
+        margin-top: 5px;
+      }
+      input:invalid + .error,
+      select:invalid + .error {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Student Registration</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="#articles">Articles</a></li>
+          <li><a href="register.html" aria-current="page">Register</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Registration Form</h2>
+
+      <form>
+        <fieldset>
+          <legend>Personal Information</legend>
+
+          <label for="firstName" class="required">First Name</label>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            required
+            aria-required="true"
+          />
+          <div class="error">First name is required.</div>
+
+          <label for="lastName" class="required">Last Name</label>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            required
+            aria-required="true"
+          />
+          <div class="error">Last name is required.</div>
+
+          <label for="dob">Date of Birth</label>
+          <input
+            type="date"
+            id="dob"
+            name="dob"
+          />
+
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender">
+            <option value="">Select...</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+            <option value="prefer-not-to-say">Prefer not to say</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>Contact Information</legend>
+          <label for="email" class="required">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="example@domain.com"
+            aria-required="true"
+          />
+          <div class="error">Please enter a valid email address.</div>
+
+          <label for="phone">Phone Number</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="123-456-789"
+          />
+        </fieldset>
+
+        <fieldset>
+          <legend>Academic Information</legend>
+
+          <label for="studentId">Student ID</label>
+          <input
+            type="text"
+            id="studentId"
+            name="studentId"
+          />
+
+          <label for="program">Program of Study</label>
+          <select id="program" name="program">
+            <option value="">Select a program...</option>
+            <option value="computer-science">Computer Science</option>
+            <option value="engineering">Engineering</option>
+            <option value="business">Business Administration</option>
+            <option value="arts">Arts</option>
+            <option value="science">Science</option>
+          </select>
+
+          <label for="enrollmentYear"
+            >Year of Enrollment</label
+          >
+          <select
+            id="enrollmentYear"
+            name="enrollmentYear"
+          >
+            <option value="">Select year...</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+          </select>
+        </fieldset>
+
+        <button type="submit">Submit Registration</button>
+      </form>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Vimuth Ranmuthu. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
