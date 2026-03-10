@@ -12,6 +12,11 @@ const server = http.createServer((req, res) => {
 
     res.writeHead(200, { "Content-Type": "text/html" });
     res.end(html);
+  } else if (req.url === "/styles.css") {
+    const css = fs.readFileSync("./styles.css");
+
+    res.writeHead(200, { "Content-Type": "text/css" });
+    res.end(css);
   }
 });
 
